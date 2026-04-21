@@ -1,45 +1,20 @@
+
 /* 
    Variables CSS
    Definimos los colores corporativos y variables reutilizables 
    para facilitar el mantenimiento del tema.
 */
 :root {
-
-    --tolima-primary: #0B2545;
-    /* Azul Navy Oscuro (Fondo escudo/textos oscuros) */
-    --tolima-primary-dark: #051325;
-    /* Azul Noche (Para degradados profundos) */
-
-    --tolima-accent: #225C96;
-    /* Cian Eléctrico (Reemplaza al Dorado/Gold) */
-    --tolima-accent-light: #E0FCFF;
-    /* Cian muy claro para fondos sutiles */
-
-    --tolima-primary-pale: #E6EEF5;
-    /* Azul pálido para fondos secundarios */
-
-    --tolima-secondary: #0056D2;
-    /* Azul Rey intermedio (Para botones o énfasis) */
-
-    /* Mapeo a tus variables antiguas para mantener compatibilidad con tu estructura */
-    --tolima-vinotinto: var(--tolima-primary);
-    --tolima-vinotinto-dark: var(--tolima-primary-dark);
-    --tolima-gold: var(--tolima-accent);
-    --tolima-gold-light: var(--tolima-accent-light);
-    --tolima-neutral: #F0F7FF;
-
-    /* Colores UI */
-    --bg-body: #F4F8FB;
-    --surface: #ffffff;
-    --text-primary: #0B2545;
-    --text-secondary: #475569;
-    --border-color: #CBD5E1;
-
-    /* Sombras y Efectos */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(11, 37, 69, 0.1), 0 2px 4px -1px rgba(11, 37, 69, 0.06);
-    --shadow-header: 0 4px 20px rgba(0, 229, 255, 0.15);
+    /* ... tus otras variables ... */
+    --tolima-accent: #87CEEB;       /* Azul Celeste (Principal para Infancia) */
+    --tolima-accent-light: #F0F8FF; /* Azul Alice (Fondo muy suave) */
+    --tolima-secondary: #FFB6C1;    /* Rosado (Para acentos y AMAIA) */
+    
+    /* Mapeo para el chat */
+    --amaia-pink: #FFB6C1;
+    --user-cyan: #87CEEB;
 }
+
 
 * {
     box-sizing: border-box;
@@ -268,13 +243,13 @@ html {
 
 /* Encabezado interno del Chat */
 .chat-header {
-    background: linear-gradient(135deg, var(--tolima-primary) 0%, #004e92 100%);
+    background: linear-gradient(135deg, var(--user-cyan) 0%, var(--amaia-pink) 100%);
     padding: 16px 20px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid var(--tolima-accent);
+    border-bottom: 2px solid #ffffff;
 }
 
 .assistant-profile {
@@ -284,19 +259,8 @@ html {
 }
 
 .avatar-circle {
-    width: 42px;
-    height: 42px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tolima-accent);
-    font-size: 24px;
-    border: 2px solid var(--tolima-accent);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
-    overflow: hidden;
-    /* Asegura que la imagen no se salga */
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
 }
 
 .avatar-circle img {
@@ -348,52 +312,20 @@ html {
     background: #fff;
 }
 
-/* Personalización de variables DF-Messenger */
-df-messenger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+/* Personalización de variables DF-Messendf-messenger {
+    /* ... (mantén tus otras configuraciones de posición) ... */
 
-    --df-messenger-font-color: var(--text-primary);
-    --df-messenger-font-family: 'Inter', sans-serif;
-
-    /* Ocultamos el header por defecto */
-    --df-messenger-titlebar-background: transparent;
-    --df-messenger-titlebar-padding: 0px;
-    --df-messenger-titlebar-title-font-size: 0px;
-    --df-messenger-titlebar-icon-display: none;
-    /* Forzar ocultamiento del header por defecto */
-    --df-messenger-titlebar-display: none;
-    --df-messenger-header-height: 0;
-    --df-messenger-titlebar-height: 0;
-    /* Colores del Chat */
-    --df-messenger-chat-background: #ffffff;
-
-    /* Mensajes */
-    --df-messenger-message-user-background: var(--tolima-primary);
-    /* TU MENSAJE (Vinotinto) */
+    /* Burbuja del USUARIO (Azul Celeste) */
+    --df-messenger-message-user-background: var(--user-cyan); 
     --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: #f0f4f8;
-    --df-messenger-message-bot-font-color: var(--text-primary);
 
-    /* Área de Input (Parte inferior) */
-    --df-messenger-input-background: var(--tolima-primary-pale);
-    --df-messenger-input-box-background: #ffffff;
-    --df-messenger-input-font-color: var(--text-primary);
+    /* Burbuja de AMAIA (Rosado) */
+    --df-messenger-message-bot-background: var(--amaia-pink);
+    --df-messenger-message-bot-font-color: #4A4A4A; /* Texto oscuro para legibilidad */
 
-    /* ICONOS Y BORDES (VINOTINTO) */
-    --df-messenger-send-icon: var(--tolima-primary);
-    /* Icono enviar */
-    --df-messenger-input-box-border: 1px solid var(--border-color);
-    /* Borde reposo */
-    --df-messenger-input-box-focus-border: 2px solid var(--tolima-accent);
-    /* Borde al escribir */
-
-    --df-messenger-input-border-top: 1px solid rgba(11, 37, 69, 0.1);
-    --df-messenger-send-icon-color: var(--tolima-primary);
+    /* Área de entrada y bordes */
+    --df-messenger-send-icon: var(--user-cyan);
+    --df-messenger-input-box-focus-border: 2px solid var(--amaia-pink);
 }
 
 /* =========================================
