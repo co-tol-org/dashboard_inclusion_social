@@ -125,14 +125,8 @@ html {
 }
 
 .sub-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    color: #00B8CC;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-top: 2px;
-}
+        color: #00BFFF !important; /* Texto Celeste */
+    }
 
 /* Área de Estado/Info (Derecha) */
 .header-info {
@@ -269,14 +263,9 @@ html {
 
 /* Encabezado interno del Chat */
 .chat-header {
-    background: linear-gradient(135deg, var(--tolima-primary) 0%, #004e92 100%);
-    padding: 16px 20px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--tolima-accent);
-}
+        background: linear-gradient(135deg, #00BFFF 0%, #FF69B4 100%) !important;
+        border-bottom: 2px solid white !important;
+    }
 
 .assistant-profile {
     display: flex;
@@ -285,20 +274,9 @@ html {
 }
 
 .avatar-circle {
-    width: 42px;
-    height: 42px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tolima-accent);
-    font-size: 24px;
-    border: 2px solid var(--tolima-accent);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
-    overflow: hidden;
-    /* Asegura que la imagen no se salga */
-}
+        background: #FF69B4 !important;
+        border: 2px solid white !important;
+    }
 
 .avatar-circle img {
     width: 100%;
@@ -351,51 +329,16 @@ html {
 
 /* Personalización de variables DF-Messenger */
 df-messenger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-
-    --df-messenger-font-color: var(--text-primary);
-    --df-messenger-font-family: 'Inter', sans-serif;
-
-    /* Ocultamos el header por defecto */
-    --df-messenger-titlebar-background: transparent;
-    --df-messenger-titlebar-padding: 0px;
-    --df-messenger-titlebar-title-font-size: 0px;
-    --df-messenger-titlebar-icon-display: none;
-    /* Forzar ocultamiento del header por defecto */
-    --df-messenger-titlebar-display: none;
-    --df-messenger-header-height: 0;
-    --df-messenger-titlebar-height: 0;
-    /* Colores del Chat */
-    --df-messenger-chat-background: #ffffff;
-
-    /* Mensajes */
-    --df-messenger-message-user-background: var(--tolima-primary);
-    /* TU MENSAJE (Vinotinto) */
-    --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: #f0f4f8;
-    --df-messenger-message-bot-font-color: var(--text-primary);
-
-    /* Área de Input (Parte inferior) */
-    --df-messenger-input-background: var(--tolima-primary-pale);
-    --df-messenger-input-box-background: #ffffff;
-    --df-messenger-input-font-color: var(--text-primary);
-
-    /* ICONOS Y BORDES (VINOTINTO) */
-    --df-messenger-send-icon: var(--tolima-primary);
-    /* Icono enviar */
-    --df-messenger-input-box-border: 1px solid var(--border-color);
-    /* Borde reposo */
-    --df-messenger-input-box-focus-border: 2px solid var(--tolima-accent);
-    /* Borde al escribir */
-
-    --df-messenger-input-border-top: 1px solid rgba(11, 37, 69, 0.1);
-    --df-messenger-send-icon-color: var(--tolima-primary);
-}
+        --df-messenger-message-bot-background: #FFC0CB !important; /* Rosado */
+        --df-messenger-message-bot-font-color: #333333 !important;
+        
+        /* Burbujas del Usuario (Azul Celeste) */
+        --df-messenger-message-user-background: #00BFFF !important; /* Celeste */
+        --df-messenger-message-user-font-color: #ffffff !important;
+        
+        /* Botón de enviar */
+        --df-messenger-send-icon: #00BFFF !important;
+    }
 
 /* =========================================
    4. DISEÑO RESPONSIVO (CORREGIDO)
