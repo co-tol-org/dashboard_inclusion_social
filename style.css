@@ -18,7 +18,7 @@
     --tolima-primary-pale: #E6F5EE;
     /* Azul pálido para fondos secundarios */
 
-    --tolima-secondary: #FFB6C1;
+    --tolima-secondary: #E6F5EE;
     /* Azul Rey intermedio (Para botones o énfasis) */
 
     /* Mapeo a tus variables antiguas para mantener compatibilidad con tu estructura */
@@ -268,12 +268,18 @@ html {
 
 /* Encabezado interno del Chat */
 .chat-header {
-    background: linear-gradient(135deg, #00A859 0%, #FFB6C1 100%) !important;    padding: 16px 20px;
+    /* Cambiamos el degradado por el verde sólido de la Gobernación */
+    background: #00A859 !important; 
+    background-color: #00A859 !important;
+    
+    padding: 16px 20px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid var(--tolima-accent);
+    
+    /* Cambiamos el borde inferior a un verde un poco más oscuro para que resalte */
+    border-bottom: 2px solid #007d42; 
 }
 
 .assistant-profile {
@@ -373,8 +379,8 @@ df-messenger {
 
     /* Mensajes */
     --df-messenger-message-user-background: #00A859;    /* TU MENSAJE (Vinotinto) */
-    --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: #FFB6C1;
+    --df-messenger-message-user-font-color: #007d42;
+    --df-messenger-message-bot-background: #E6F5EE;
     --df-messenger-message-bot-font-color: var(--text-primary);
 
     /* Área de Input (Parte inferior) */
