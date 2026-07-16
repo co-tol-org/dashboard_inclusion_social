@@ -1,27 +1,24 @@
 :root {
-    /* Paleta Verde (Tolima) */
+    /* Paleta Verde (TIC y Prospectiva) */
     --tolima-primary: #00A859;         /* Verde Principal Institucional */
-    --tolima-primary-dark: #007d42;    /* Verde Oscuro (Bordes y contrastes) */
+    --tolima-primary-dark: #007d42;    /* Verde Oscuro para bordes/sombras */
     --tolima-accent: #00A859;          /* Acento principal */
-    --tolima-accent-light: #E0FFF0;    /* Verde muy clarito para fondos sutiles */
-    --tolima-primary-pale: #E6F5EE;    /* Verde pálido para área de input / mensajes bot */
-    --tolima-secondary: #007d42;       /* Verde intermedio para énfasis */
-
-    /* Colores UI */
-    --bg-body: #F4F8FB;
+    --tolima-accent-light: #E0FFF0;    /* Verde muy claro para fondos de mensajes */
+    --tolima-primary-pale: #E6F5EE;    /* Verde pálido para el fondo del input */
+    --tolima-secondary: #007d42;       /* Color secundario */
+    
+    --bg-body: #F4F8FB;                /* Fondo general */
     --surface: #ffffff;
-    --text-primary: #0B2545;
+    --text-primary: #0B2545;           /* Texto oscuro */
     --text-secondary: #475569;
     --border-color: #CBD5E1;
-
-    /* Sombras y Efectos ajustados al verde */
+    
     --shadow-md: 0 4px 6px -1px rgba(0, 168, 89, 0.1), 0 2px 4px -1px rgba(0, 168, 89, 0.06);
     --shadow-header: 0 4px 20px rgba(0, 168, 89, 0.15);
 }
 
 * { box-sizing: border-box; }
 
-/* Estructura perfecta de aplicación (Bloquea scroll global) */
 body, html {
     margin: 0; padding: 0; height: 100vh;
     font-family: 'Inter', sans-serif; background-color: var(--bg-body);
@@ -31,17 +28,13 @@ body, html {
 /* HEADER */
 .app-header {
     height: 72px; background: #fff; display: flex; align-items: center; justify-content: space-between;
-    padding: 0 24px; box-shadow: var(--shadow-header); z-index: 50; position: relative; 
-    border-bottom: 3px solid var(--tolima-accent); /* Borde Verde */
+    padding: 0 24px; box-shadow: var(--shadow-header); z-index: 50; position: relative; border-bottom: 3px solid var(--tolima-accent);
 }
 .branding { display: flex; align-items: center; gap: 16px; }
 .escudo-img { height: 60px; width: 165px; display: flex; align-items: center; justify-content: center; }
 .titles { display: flex; flex-direction: column; justify-content: center; }
-
-/* Textos del header en Verde */
 .main-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--tolima-primary); text-transform: uppercase; line-height: 1.1; }
-.sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: var(--tolima-primary-dark); text-transform: uppercase; margin-top: 2px; }
-
+.sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: var(--tolima-secondary); text-transform: uppercase; margin-top: 2px; }
 .header-info { display: flex; align-items: center; gap: 20px; }
 .system-status { display: flex; align-items: center; gap: 8px; background: rgba(0, 168, 89, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: var(--tolima-primary-dark); border: 1px solid rgba(0, 168, 89, 0.2); }
 .status-indicator { width: 8px; height: 8px; background-color: var(--tolima-primary); border-radius: 50%; animation: pulse 2s infinite; }
@@ -58,47 +51,40 @@ body, html {
 .spinner { width: 40px; height: 40px; border: 3px solid var(--tolima-accent-light); border-top-color: var(--tolima-accent); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 12px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* CHAT PANEL (DISEÑO PERSONALIZADO) */
+/* CHAT PANEL (TU DISEÑO PERSONALIZADO) */
 .chat-panel { width: 300px; min-width: 280px; display: flex; flex-direction: column; background: transparent; padding: 16px; }
 .chat-card { background: var(--surface); flex: 1; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; position: relative; }
-
-/* Encabezado del Chat en Verde con Letras Blancas */
 .chat-header { background: var(--tolima-primary); padding: 16px 20px; color: #ffffff; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--tolima-primary-dark); }
 .assistant-profile { display: flex; align-items: center; gap: 12px; }
-.avatar-circle { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.8); }
+.avatar-circle { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.4); }
 .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
 .assistant-details h2 { margin: 0; font-size: 0.95rem; font-weight: 700; font-family: 'Montserrat', sans-serif; color: #ffffff; }
-.assistant-details span { font-size: 0.75rem; opacity: 0.9; font-weight: 600; color: #ffffff; }
-.btn-reset { background: rgba(0, 0, 0, 0.1); border: none; color: #ffffff; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
-.btn-reset:hover { background: rgba(0,0,0,0.2); transform: rotate(-15deg); }
+.assistant-details span { font-size: 0.75rem; opacity: 0.9; font-weight: 300; color: #ffffff; }
+.btn-reset { background: rgba(255, 255, 255, 0.15); border: none; color: #ffffff; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.btn-reset:hover { background: var(--tolima-primary-dark); transform: rotate(-15deg); }
 .messenger-wrapper { flex: 1; position: relative; background: #fff; }
 
-/* CONFIGURACIÓN DF-MESSENGER (TEMA VERDE) */
+/* CONFIGURACIÓN DF-MESSENGER */
 df-messenger {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;
     
     --df-messenger-font-color: var(--text-primary);
     --df-messenger-font-family: 'Inter', sans-serif;
     
-    /* Magia para ocultar el header nativo */
+    /* --- AQUÍ ESTÁ LA MAGIA PARA DESAPARECER LA PALABRA "AMAIA" --- */
     --df-messenger-titlebar-display: none; 
     --df-messenger-titlebar-title-font-size: 0px;
     --df-messenger-titlebar-padding: 0px;
     --df-messenger-titlebar-height: 0px;
     --df-messenger-header-height: 0px;
+    /* ------------------------------------------------------------- */
     
     --df-messenger-chat-background: #ffffff;
     --df-messenger-message-user-background: var(--tolima-primary);
     --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: var(--tolima-primary-pale);
+    --df-messenger-message-bot-background: var(--tolima-accent-light);
     --df-messenger-message-bot-font-color: var(--text-primary);
-    
     --df-messenger-input-background: var(--tolima-primary-pale);
-    --df-messenger-input-box-background: #ffffff;
-    --df-messenger-send-icon: var(--tolima-primary); 
-    --df-messenger-input-box-border: 1px solid var(--border-color);
-    --df-messenger-input-box-focus-border: 2px solid var(--tolima-primary); 
-    --df-messenger-input-border-top: 1px solid rgba(0, 168, 89, 0.2);
 }
 
 /* BOTÓN FLOTANTE (Oculto en PC por defecto) */
@@ -106,7 +92,7 @@ df-messenger {
 
 
 /* =========================================
-   DISEÑO PARA CELULARES (LA ESTRUCTURA DE TURISMO)
+   DISEÑO PARA CELULARES (BOTÓN FLOTANTE)
 ========================================= */
 @media (max-width: 1024px) {
     .app-header { height: auto; padding: 10px 15px; flex-wrap: wrap; }
@@ -114,13 +100,11 @@ df-messenger {
     .main-title { font-size: 0.85rem; line-height: 1.2; }
     .sub-title, .header-info { display: none !important; }
 
-    /* El Dashboard ocupa todo el espacio. El body se queda fijo. */
+    /* El Dashboard ocupa todo el espacio */
     .dashboard-panel {
         width: 100%; height: calc(100vh - 65px) !important; margin: 0; border-radius: 0; border: none;
         overflow: auto !important; -webkit-overflow-scrolling: touch;
     }
-    
-    /* Wrapper fuerza al dashboard a crear scroll interno */
     .iframe-wrapper {
         width: 1200px !important; min-width: 1200px !important; 
         height: 800px !important; min-height: 800px !important;
