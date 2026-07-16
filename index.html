@@ -10,21 +10,27 @@
     <title>AMAIA - Gobernación del Tolima (Secretaría de Prospectiva y TIC)</title>
     <link rel="icon" type="image/png" href="https://storage.googleapis.com/gdt-icons/Amaia%2001.png">
 
+    <!-- Fuentes: Montserrat (Títulos/Branding) e Inter (UI/Texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Iconos Phosphor (Modernos y ligeros) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- Enlace a la hoja de estilos personalizada (Con v=2.0 para forzar actualización en celular) -->
+    <link rel="stylesheet" href="style.css?v=2.0">
     
+    <!-- Estilos y Script de Dialogflow Messenger -->
     <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </head>
 
 <body>
+    <!-- 1. Encabezado Oficial -->
     <header class="app-header">
         <div class="branding">
+            <!--Escudo de la Gobernación del tolima-->
             <img src="https://storage.googleapis.com/gdt-icons/Gobernaci%C3%B3n%20del%20Tolima%20Icon.png" alt="Escudo Gobernación del Tolima" class="escudo-img">
             <div class="titles">
                 <span class="main-title">Sistema de información estadístico del Tolima - Secretaría de planeación prospectiva y TIC</span>
@@ -40,22 +46,27 @@
         </div>
     </header>
 
+    <!-- 2. Contenido Principal -->
     <main class="main-layout">
 
+        <!-- Panel Izquierdo: Dashboard -->
         <section class="dashboard-panel">
             <div class="dashboard-loader">
                 <div class="spinner"></div>
                 <p style="font-size: 0.9rem; font-weight: 500;">Cargando Dashboard...</p>
             </div>
 
+            <!-- WRAPPER PARA BLOQUEAR DESBORDE EN MÓVILES -->
             <div class="iframe-wrapper">
                 <iframe src="https://datastudio.google.com/embed/reporting/394bce5c-484f-4e6f-b99e-05a49e0e6cbe/page/YwUuF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
             </div>
         </section>
 
+        <!-- Panel Derecho: Amaia -->
         <aside class="chat-panel" id="chat-panel">
             <div class="chat-card">
 
+                <!-- Header Personalizado del Chat -->
                 <div class="chat-header">
                     <div class="assistant-profile">
                         <div class="avatar-circle">
@@ -72,6 +83,7 @@
                     </button>
                 </div>
 
+                <!-- Contenido del Chat -->
                 <div class="messenger-wrapper">
                     <df-messenger location="us-central1" project-id="co-tol-prd" agent-id="ab761a2e-fb91-4db0-8fcc-0b8a498eb948" allow-feedback="all" language-code="es" max-query-length="-1" expand="true" intent="Hola">
                         <df-messenger-chat chat-title="AMAIA" bot-writing-text="Escribiendo..." placeholder-text="Tu consulta..."></df-messenger-chat>
@@ -81,16 +93,19 @@
         </aside>
     </main>
 
+    <!-- 3. Botón Flotante para Celulares -->
     <button id="chat-toggle-btn" class="chat-toggle-btn">
         <img src="https://storage.googleapis.com/gdt-icons/Amaia%2001.png" alt="AMAIA">
     </button>
 
+    <!-- 4. Script para abrir/cerrar el chat en móviles -->
     <script>
         document.getElementById('chat-toggle-btn').addEventListener('click', function() {
             document.getElementById('chat-panel').classList.toggle('open');
         });
     </script>
 
+    <!-- Script principal de la aplicación -->
     <script src="main.js?v=1.1"></script>
 </body>
 
